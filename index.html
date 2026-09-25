@@ -38,36 +38,37 @@
 </script>
 <style>
   :root {
-    --navy: #1b2a4a; --navy-2: #24365c; --sand: #c49e60; --sand-d: #a6804c;
-    --cream: #faf7f1; --ink: #2a2a2e; --muted: #6b6b74; --line: #e6dfd2;
+    /* Oxford Brand Book: Oxford Blue #002147 / Light Primary #122f53 / Stone #a79d96 / Stone tertiary #f3f1ee */
+    --navy: #002147; --navy-2: #122f53; --sand: #a79d96; --sand-d: #7d7165;
+    --cream: #f3f1ee; --ink: #14212f; --muted: #756b62; --line: #e2dcd4;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--cream); line-height: 1.7; }
   .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
-  header { position: sticky; top: 0; background: rgba(250,247,241,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); z-index: 10; }
+  header { position: sticky; top: 0; background: rgba(243,241,238,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); z-index: 10; }
   nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
   .logo { font-weight: bold; color: var(--navy); font-size: 1.05rem; letter-spacing: .3px; }
   .logo span { color: var(--sand-d); }
   nav ul { display: flex; gap: 22px; list-style: none; font-size: .92rem; }
   nav a { color: var(--navy); text-decoration: none; }
   nav a:hover { color: var(--sand-d); }
-  .hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: #f4efe6; }
+  .hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: var(--cream); }
   .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
   .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 6px; }
   .hero .en-name { color: var(--sand); font-size: 1.05rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
-  .hero p.lead { font-size: 1.12rem; color: #d9d3c6; max-width: 46ch; }
+  .hero p.lead { font-size: 1.12rem; color: #d3cec8; max-width: 46ch; }
   .hero .tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
-  .hero .tags span { border: 1px solid rgba(196,158,96,.55); color: var(--sand); padding: 5px 14px; border-radius: 999px; font-size: .82rem; }
+  .hero .tags span { border: 1px solid rgba(167,157,150,.55); color: var(--sand); padding: 5px 14px; border-radius: 999px; font-size: .82rem; }
   .hero img { width: 300px; height: 300px; object-fit: cover; object-position: top; border-radius: 50%; border: 5px solid var(--sand); justify-self: center; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
   section { padding: 64px 0; }
   section h2 { font-size: 1.7rem; color: var(--navy); margin-bottom: 8px; }
   .rule { width: 70px; height: 3px; background: var(--sand); margin-bottom: 28px; }
   .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-  .factbox { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 24px; font-size: .95rem; }
+  .factbox { background: #fdfcfb; border: 1px solid var(--line); border-radius: 10px; padding: 24px; font-size: .95rem; }
   .factbox h3 { color: var(--navy); font-size: 1rem; margin-bottom: 12px; }
   .factbox dt { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 12px; }
   .factbox dd { margin: 0; }
-  .alt { background: #f2ecdf; }
+  .alt { background: #ebe6df; }
   .subhead { color: var(--sand-d); font-size: .95rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
   .tl-logo { height: 26px; margin-top: 8px; display: block; }
   .tl-logo-sq { height: 44px; margin-top: 8px; display: block; }
@@ -76,12 +77,12 @@
   .timeline li::before { content: ""; position: absolute; left: -35px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--sand); }
   .timeline .yr { color: var(--sand-d); font-weight: bold; font-size: .9rem; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; }
-  .card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; }
+  .card { background: #fdfcfb; border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; }
   .card .meta { color: var(--muted); font-size: .82rem; margin-bottom: 8px; }
   .card img.cover { width: 110px; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 14px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
   .card img.wide { width: 100%; border-radius: 8px; margin-bottom: 14px; object-fit: cover; max-height: 160px; }
   .card h3 { color: var(--navy); font-size: 1.08rem; line-height: 1.4; margin-bottom: 10px; }
-  .card p { font-size: .93rem; color: #4a4a52; flex: 1; }
+  .card p { font-size: .93rem; color: var(--muted); flex: 1; }
   .card a { color: var(--sand-d); text-decoration: none; font-size: .9rem; margin-top: 14px; }
   .edu-item { display: grid; grid-template-columns: 90px 126px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: center; }
   .edu-logos { display: flex; gap: 12px; align-items: center; }
@@ -91,12 +92,12 @@
   .edu-item p { color: var(--muted); font-size: .92rem; }
   .quotebox { position: relative; border-radius: 12px; padding: 52px 44px; font-style: italic; font-size: 1.15rem; line-height: 1.9; overflow: hidden; }
   .quotebox::before { content: ""; position: absolute; inset: 0; background: url('govi-tal.jpg') center 30%/cover no-repeat; }
-  .quotebox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(27,42,74,.38) 0%, rgba(24,28,22,.24) 100%); }
+  .quotebox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,33,71,.38) 0%, rgba(20,33,47,.24) 100%); }
   .quotebox p { text-shadow: 0 2px 12px rgba(0,0,0,.75), 0 1px 3px rgba(0,0,0,.9); }
   .quotebox .sig { text-shadow: 0 2px 10px rgba(0,0,0,.8), 0 1px 3px rgba(0,0,0,.9); }
-  .quotebox p { position: relative; z-index: 1; color: #f4efe6; margin: 0; }
+  .quotebox p { position: relative; z-index: 1; color: var(--cream); margin: 0; }
   .quotebox .sig { position: relative; z-index: 1; text-align: right; font-style: normal; color: var(--sand); margin-top: 18px; font-size: .95rem; }
-  footer { background: var(--navy); color: #b9b2a4; padding: 40px 0; font-size: .88rem; }
+  footer { background: var(--navy); color: var(--sand); padding: 40px 0; font-size: .88rem; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer a { color: var(--sand); text-decoration: none; }
   .disamb { font-size: .84rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 34px; padding-top: 16px; }

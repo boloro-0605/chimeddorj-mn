@@ -89,8 +89,11 @@
   .edu-item .yr { color: var(--sand-d); font-weight: bold; }
   .edu-item h3 { color: var(--navy); font-size: 1.05rem; }
   .edu-item p { color: var(--muted); font-size: .92rem; }
-  .quotebox { background: var(--navy); color: #efe9dc; border-radius: 12px; padding: 44px; font-style: italic; font-size: 1.15rem; line-height: 1.9; }
-  .quotebox .sig { text-align: right; font-style: normal; color: var(--sand); margin-top: 18px; font-size: .95rem; }
+  .quotebox { position: relative; border-radius: 12px; padding: 52px 44px; font-style: italic; font-size: 1.15rem; line-height: 1.9; overflow: hidden; }
+  .quotebox::before { content: ""; position: absolute; inset: 0; background: url('govi-tal.jpg') center 30%/cover no-repeat; }
+  .quotebox::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(27,42,74,.88) 0%, rgba(24,28,22,.72) 100%); }
+  .quotebox p { position: relative; z-index: 1; color: #f4efe6; margin: 0; }
+  .quotebox .sig { position: relative; z-index: 1; text-align: right; font-style: normal; color: var(--sand); margin-top: 18px; font-size: .95rem; }
   footer { background: var(--navy); color: #b9b2a4; padding: 40px 0; font-size: .88rem; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer a { color: var(--sand); text-decoration: none; }
@@ -335,9 +338,9 @@
     <h2>Тэмдэглэл</h2>
     <div class="rule"></div>
     <div class="quotebox">
-      Говь нутаг яруу байна, тансаг байна.<br>
+      <p>Говь нутаг яруу байна, тансаг байна.<br>
       Таанын толгой мөндөр шиг цайрч, айраг хадаг шиг тунарч байна.<br>
-      Өдөрт нь энгүй талд ногооны униар лүглийж, шөнөд нь тэнгэрийн хаяанд хавирган сар саатаж байна.
+      Өдөрт нь энгүй талд ногооны униар лүглийж, шөнөд нь тэнгэрийн хаяанд хавирган сар саатаж байна.</p>
       <div class="sig">— Мөнхжаргалын Чимэддорж, «Эх орон» тэмдэглэлээс</div>
     </div>
   </div>

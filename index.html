@@ -6,6 +6,9 @@
 <title>Мөнхжаргалын Чимэддорж — Эдийн засагч, төрийн бодлогын судлаач</title>
 <meta name="description" content="Мөнхжаргалын Чимэддорж (Chimeddorj Munkhjargal) — эдийн засагч, төрийн бодлогын судлаач, УИХ дахь Ардчилсан намын бүлгийн ахлах бодлогын зөвлөх. Албан ёсны вэбсайт.">
 <link rel="canonical" href="https://chimeddorj.mn/">
+<link rel="alternate" hreflang="mn" href="https://chimeddorj.mn/">
+<link rel="alternate" hreflang="en" href="https://chimeddorj.mn/en/">
+<link rel="alternate" hreflang="x-default" href="https://chimeddorj.mn/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Мөнхжаргалын Чимэддорж — Эдийн засагч, төрийн бодлогын судлаач">
 <meta property="og:description" content="Эдийн засагч, төрийн бодлогын судлаач. УИХ дахь Ардчилсан намын бүлгийн ахлах зөвлөх. Оксфордын Их Сургуулийн төрийн бодлогын магистр.">
@@ -49,9 +52,13 @@
   nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
   .logo { font-weight: bold; color: var(--navy); font-size: 1.05rem; letter-spacing: .3px; }
   .logo span { color: var(--sand-d); }
+  .nav-left { display: flex; align-items: center; gap: 34px; }
   nav ul { display: flex; gap: 22px; list-style: none; font-size: .92rem; }
   nav a { color: var(--navy); text-decoration: none; }
   nav a:hover { color: var(--sand-d); }
+  .lang-switch { display: flex; gap: 10px; align-items: center; }
+  .lang-switch a { font-size: 1.25rem; line-height: 1; text-decoration: none; opacity: .38; filter: grayscale(55%); transition: opacity .15s, filter .15s; }
+  .lang-switch a:hover, .lang-switch a.lang-active { opacity: 1; filter: none; }
   .hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); color: var(--cream); }
   .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
   .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 6px; }
@@ -122,15 +129,21 @@
 <header>
   <div class="wrap">
     <nav>
-      <div class="logo">М.ЧИМЭДДОРЖ<span>.mn</span></div>
-      <ul>
-        <li><a href="#about">Намтар</a></li>
-        <li><a href="#career">Замнал</a></li>
-        <li><a href="#education">Боловсрол</a></li>
-        <li><a href="#publications">Нийтлэл</a></li>
-        <li><a href="#media">Медиа</a></li>
-        <li><a href="#notes">Тэмдэглэл</a></li>
-      </ul>
+      <div class="nav-left">
+        <div class="logo">М.ЧИМЭДДОРЖ<span>.mn</span></div>
+        <ul>
+          <li><a href="#about">Намтар</a></li>
+          <li><a href="#career">Замнал</a></li>
+          <li><a href="#education">Боловсрол</a></li>
+          <li><a href="#publications">Нийтлэл</a></li>
+          <li><a href="#media">Медиа</a></li>
+          <li><a href="#notes">Тэмдэглэл</a></li>
+        </ul>
+      </div>
+      <div class="lang-switch">
+        <a href="index.html" class="lang-active" aria-label="Монгол хэл">🇲🇳</a>
+        <a href="en/index.html" aria-label="English">🇬🇧</a>
+      </div>
     </nav>
   </div>
 </header>

@@ -34,5 +34,8 @@ Each item below is published in Mongolian at the given path and in English at th
 - [nuursnii-hulgai.html](https://chimeddorj.mn/nuursnii-hulgai.html): The coal theft that could even bring down parliamentary government (2022, baabar.mn).
 - [yaaraltai-gorim-eaezh-2025.html](https://chimeddorj.mn/yaaraltai-gorim-eaezh-2025.html): State of emergency, a 20-year fuel contract, and the EAEU — position from a 2025 interview with inews.mn.
 
+## Reference
+- [tugeemel-asuultuud.html](https://chimeddorj.mn/tugeemel-asuultuud.html): Frequently asked questions — identity and name-confusion disambiguation (a Mongolian poet, a teacher, and a GMIT mineral-processing researcher all share variants of this name), education, political role, organizations, publications, and sources. Structured with FAQPage schema.
+
 ## Optional
 - [sitemap.xml](https://chimeddorj.mn/sitemap.xml): Full list of indexed URLs, Mongolian and English.

@@ -1,0 +1,38 @@
+# Chimeddorj Munkhjargal (Мөнхжаргалын Чимэддорж)
+
+> Mongolian economist and public policy researcher. Senior Advisor to the Democratic Party Caucus in the Parliament of Mongolia; Chair of the Board, Gerege Policy Institute; former Director, Labor Research Institute (Ministry of Labour); founder, Ulaanbaatar Analytics. Master of Public Policy, University of Oxford (2018). This site is his authoritative personal source — biography, publications, and full transcripts of talks and interviews, in Mongolian and English.
+
+Note: not to be confused with a Mongolian mineral-processing researcher who publishes under a similar English name at GMIT.
+
+## Primary pages
+- [Biography — Mongolian](https://chimeddorj.mn/): Full biography, career timeline, education, research, media, and links to official channels.
+- [Biography — English](https://chimeddorj.mn/en/): English version of the biography.
+
+## Research
+- [RAND Corporation report (2015)](https://chimeddorj.mn/rand-mongolia-labor-market-2015.pdf): "Improving the Mongolian Labor Market and Enhancing Opportunities for Youth," RAND RR-1092. Joint research; Chimeddorj led the Mongolian team from the Labor Research Institute.
+
+## Talks, interviews and articles
+Each item below is published in Mongolian at the given path and in English at the same path under `/en/`.
+
+- [uls-turgui-ediin-zasag.html](https://chimeddorj.mn/uls-turgui-ediin-zasag.html): "Economics Without Politics" (2016) — lecture on Mongolia's windfall-income mindset, interest rates as a political product, and the 30%-of-budget rule.
+- [mandah-turiin-100.html](https://chimeddorj.mn/mandah-turiin-100.html): From dismounting a wagon to Oxford — on education, corruption, and the limits of the state.
+- [namiin-dotood-ardchilal.html](https://chimeddorj.mn/namiin-dotood-ardchilal.html): Internal democracy within a political party — rules, finances, pluralism.
+- [an-ii-shinechleliin-durvun-chiglel.html](https://chimeddorj.mn/an-ii-shinechleliin-durvun-chiglel.html): Democratic Party reform — ideology, participation, and internal-election financing.
+- [erh-chuluunii-uzel-sanaa.html](https://chimeddorj.mn/erh-chuluunii-uzel-sanaa.html): The idea of liberty — human rights, the limits of the state, and competition.
+- [chuluut-ediin-zasag.html](https://chimeddorj.mn/chuluut-ediin-zasag.html): The free economy — competition as its lifeblood.
+- [ashgiin-bus-sektor.html](https://chimeddorj.mn/ashgiin-bus-sektor.html): The non-profit sector — foundations, taxation, and civil society.
+- [hudulmuriin-zah-zeeliin-barometr.html](https://chimeddorj.mn/hudulmuriin-zah-zeeliin-barometr.html): A barometer for the labor market — in-demand professions and workforce shortages.
+- [hurungiin-zah-zeel-hugjliin-gars.html](https://chimeddorj.mn/hurungiin-zah-zeel-hugjliin-gars.html): A path to development — capital markets, interest rates, and 20 years of education policy.
+- [ur-ashig-erelhiilsen-hurungu-oruulalt.html](https://chimeddorj.mn/ur-ashig-erelhiilsen-hurungu-oruulalt.html): Return-seeking investment — why low taxes alone are not enough.
+- [aj-uildveriin-durvun-huvisgal.html](https://chimeddorj.mn/aj-uildveriin-durvun-huvisgal.html): The fourth industrial revolution — foundational technologies and business.
+- [anu-hyatadiin-hudaldaanii-dain.html](https://chimeddorj.mn/anu-hyatadiin-hudaldaanii-dain.html): The US–China trade war — technology, energy, and the turn in globalization.
+- [bidnii-soyoliin-horog.html](https://chimeddorj.mn/bidnii-soyoliin-horog.html): A portrait of our culture and technology.
+- [friedman-orchuulagchiin-zurvas.html](https://chimeddorj.mn/friedman-orchuulagchiin-zurvas.html): Translator's note — why translate Milton Friedman into Mongolian.
+- [helmegduuleltiin-durvun-surgamj.html](https://chimeddorj.mn/helmegduuleltiin-durvun-surgamj.html): On the Day of Commemoration for Victims of Political Persecution — content and lessons.
+- [hundetgel-altan-tur-ariun-ner.html](https://chimeddorj.mn/hundetgel-altan-tur-ariun-ner.html): Tribute — "Hold fast to the golden state, and a righteous name will follow."
+- [montsame-2016-sanhuugiin-sahilga-bat.html](https://chimeddorj.mn/montsame-2016-sanhuugiin-sahilga-bat.html): Fiscal discipline and the 2016 crisis — position given in an interview with MONTSAME.
+- [nuursnii-hulgai.html](https://chimeddorj.mn/nuursnii-hulgai.html): The coal theft that could even bring down parliamentary government (2022, baabar.mn).
+- [yaaraltai-gorim-eaezh-2025.html](https://chimeddorj.mn/yaaraltai-gorim-eaezh-2025.html): State of emergency, a 20-year fuel contract, and the EAEU — position from a 2025 interview with inews.mn.
+
+## Optional
+- [sitemap.xml](https://chimeddorj.mn/sitemap.xml): Full list of indexed URLs, Mongolian and English.

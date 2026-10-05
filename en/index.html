@@ -127,9 +127,11 @@
   .cite { color: var(--sand-d); text-decoration: none; font-size: .88em; }
   .cite:hover { text-decoration: underline; }
   @media (max-width: 780px) {
-    .hero { min-height: auto; }
-    .hero-photo { display: none; }
-    .hero-content { text-align: center; padding: 56px 0 64px; max-width: none; }
+    .hero { min-height: auto; flex-direction: column; align-items: stretch; }
+    .hero-photo { position: relative; top: auto; left: auto; bottom: auto; width: 100%; height: 320px; }
+    .hero-photo img { object-position: 55% 18%; }
+    .hero-photo::before { background: linear-gradient(0deg, var(--navy) 0%, rgba(0,33,71,.15) 55%, rgba(0,33,71,.08) 100%); }
+    .hero-content { text-align: center; padding: 40px 0 56px; max-width: none; margin-left: 0; }
     .kicker-pill { margin-left: auto; margin-right: auto; }
     .hero p.lead { margin: 0 auto; }
     .hero .tags, .hero-cta { justify-content: center; }

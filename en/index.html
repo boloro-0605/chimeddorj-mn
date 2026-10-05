@@ -61,12 +61,12 @@
   .lang-switch a { font-size: 1.25rem; line-height: 1; text-decoration: none; opacity: .38; filter: grayscale(55%); transition: opacity .15s, filter .15s; }
   .lang-switch a:hover, .lang-switch a.lang-active { opacity: 1; filter: none; }
   .hero { position: relative; overflow: hidden; min-height: 86vh; display: flex; align-items: center; background: var(--navy); color: var(--cream); }
-  .hero-photo { position: absolute; top: 0; left: 0; bottom: 0; width: calc(44% + 2px); overflow: hidden; z-index: 0; background: var(--navy); }
+  .hero-photo { position: absolute; top: 0; left: 0; bottom: 0; width: calc(60% + 2px); overflow: hidden; z-index: 0; background: var(--navy); }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 48%; display: block; }
-  .hero-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to left, var(--navy) 0%, var(--navy) 4%, rgba(0,33,71,.2) 14%, rgba(0,33,71,.12) 100%); }
+  .hero-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to left, var(--navy) 0%, var(--navy) 30%, rgba(0,33,71,.4) 55%, rgba(0,33,71,.12) 100%); }
   .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,33,71,.55) 0%, rgba(0,33,71,0) 30%, rgba(0,33,71,0) 72%, rgba(0,33,71,.4) 100%); }
   .hero > .wrap { width: 100%; }
-  .hero-content { position: relative; z-index: 2; max-width: 600px; margin-left: auto; padding: 120px 0 90px; }
+  .hero-content { position: relative; z-index: 2; max-width: 600px; margin-left: auto; padding: 120px 0 90px 40px; }
   .kicker-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(73,182,255,.45); background: rgba(73,182,255,.1); backdrop-filter: blur(4px); color: var(--sand); padding: 8px 18px; border-radius: 999px; font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 30px; }
   .hero h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); font-weight: 800; line-height: .98; letter-spacing: -1.5px; margin-bottom: 14px; text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.5); }
   .hero .en-name { color: var(--sand); font-size: 1.05rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 26px; font-weight: 600; text-shadow: 0 1px 10px rgba(0,0,0,.5); }

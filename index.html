@@ -61,10 +61,11 @@
   .lang-switch a { font-size: 1.25rem; line-height: 1; text-decoration: none; opacity: .38; filter: grayscale(55%); transition: opacity .15s, filter .15s; }
   .lang-switch a:hover, .lang-switch a.lang-active { opacity: 1; filter: none; }
   .hero { position: relative; overflow: hidden; min-height: 86vh; display: flex; align-items: center; background: var(--navy); color: var(--cream); }
-  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: .5; }
-  .hero-scrim { position: absolute; inset: 0; background: linear-gradient(100deg, var(--navy) 0%, var(--navy) 40%, rgba(0,33,71,.96) 56%, rgba(0,33,71,.8) 72%, rgba(0,33,71,.4) 92%); }
-  .hero-scrim-bottom { position: absolute; inset: 0; background: linear-gradient(0deg, var(--navy) 0%, transparent 28%); }
-  .hero-content { position: relative; z-index: 2; max-width: 660px; padding: 120px 0 90px; }
+  .hero-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 44%; overflow: hidden; z-index: 0; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: .6; display: block; }
+  .hero-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 10%, transparent 48%); }
+  .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--navy) 0%, transparent 38%); }
+  .hero-content { position: relative; z-index: 2; max-width: 600px; padding: 120px 0 90px; }
   .kicker-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(73,182,255,.45); background: rgba(73,182,255,.1); backdrop-filter: blur(4px); color: var(--sand); padding: 8px 18px; border-radius: 999px; font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 30px; }
   .hero h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); font-weight: 800; line-height: .98; letter-spacing: -1.5px; margin-bottom: 14px; }
   .hero .en-name { color: var(--sand); font-size: 1.05rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 26px; font-weight: 600; }
@@ -126,7 +127,7 @@
   .cite:hover { text-decoration: underline; }
   @media (max-width: 780px) {
     .hero { min-height: auto; }
-    .hero-scrim { background: linear-gradient(180deg, var(--navy) 0%, rgba(0,33,71,.85) 55%, rgba(0,33,71,.55) 100%); }
+    .hero-photo { display: none; }
     .hero-content { text-align: center; padding: 56px 0 64px; max-width: none; }
     .kicker-pill { margin-left: auto; margin-right: auto; }
     .hero p.lead { margin: 0 auto; }
@@ -163,9 +164,7 @@
 </header>
 
 <div class="hero">
-  <img class="hero-bg" src="portrait.jpg" alt="">
-  <div class="hero-scrim"></div>
-  <div class="hero-scrim-bottom"></div>
+  <div class="hero-photo"><img src="portrait.jpg" alt=""></div>
   <div class="wrap">
     <div class="hero-content">
       <div class="kicker-pill">Эдийн засагч · Төрийн бодлогын судлаач</div>

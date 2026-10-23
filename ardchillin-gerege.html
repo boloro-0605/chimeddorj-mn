@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ардчиллын Гэрэгэ — Мөнхжаргалын Чимэддорж</title>
+<meta name="description" content="Ардчиллын Гэрэгэ товхимол — хуудсаар нь үзэх боломжтой. Мөнхжаргалын Чимэддоржийн вэбсайт.">
+<link rel="canonical" href="https://chimeddorj.mn/ardchillin-gerege.html">
+<link rel="alternate" hreflang="mn" href="https://chimeddorj.mn/ardchillin-gerege.html">
+<link rel="alternate" hreflang="x-default" href="https://chimeddorj.mn/ardchillin-gerege.html">
+<style>
+  :root { --navy:#002147; --navy-2:#122f53; --navy-deep:#00152f; --sand:#49b6ff; --sand-d:#1f7fc4; --cream:#f6f4f1; --ink:#14212f; --muted:#6b6862; --line:#e6e1da; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Calibri, 'Segoe UI', Arial, sans-serif; color:var(--ink); background:var(--cream); line-height:1.8; }
+  .wrap { max-width:840px; margin:0 auto; padding:0 24px; }
+  header { background:rgba(246,244,241,.95); border-bottom:1px solid var(--line); padding:14px 0; }
+  header a { color:var(--navy); text-decoration:none; font-weight:bold; }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; }
+  .lang-switch { display:flex; gap:9px; align-items:center; }
+  .lang-switch a { font-size:1.15rem; line-height:1; text-decoration:none; opacity:.4; filter:grayscale(55%); transition:opacity .15s, filter .15s; }
+  .lang-switch a:hover, .lang-switch a.lang-active { opacity:1; filter:none; }
+  .hero { background:linear-gradient(135deg,var(--navy) 0%,#122f53 100%); color:var(--cream); padding:76px 0 56px; text-align:center; }
+  .hero .kicker { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(73,182,255,.45); background:rgba(73,182,255,.1); color:var(--sand); padding:7px 16px; border-radius:999px; font-size:.78rem; letter-spacing:1px; text-transform:uppercase; font-weight:600; margin-bottom:22px; }
+  .hero h1 { font-size:clamp(1.7rem,4vw,2.5rem); font-weight:800; line-height:1.15; letter-spacing:-.5px; margin-bottom:6px; }
+  .hero .meta { color:#d8d3cb; margin-top:16px; font-size:.95rem; }
+
+  .book-section { background: radial-gradient(ellipse at 50% 20%, var(--navy-2) 0%, var(--navy) 45%, var(--navy-deep) 100%); padding: 56px 0 72px; }
+  .book-wrap { position:relative; width:min(62vh, 440px); aspect-ratio: 3 / 4.24; margin:0 auto; perspective:2600px; filter:drop-shadow(0 40px 70px rgba(0,8,20,.55)); }
+  .page { position:absolute; inset:0; border-radius:3px; overflow:hidden; transform-style:preserve-3d; transform-origin:left center; transition:transform 900ms cubic-bezier(.645,.045,.355,1); box-shadow:0 0 0 1px rgba(0,0,0,.25); cursor:pointer; }
+  .page img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden; display:block; }
+  .page .back { position:absolute; inset:0; background:linear-gradient(135deg, var(--navy-2), var(--navy-deep)); backface-visibility:hidden; transform:rotateY(180deg); }
+  .page .back::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 14%, transparent 86%, rgba(0,0,0,.35)); }
+  .page.flipped { transform:rotateY(-180deg); z-index:1; }
+  .page:not(.flipped) { z-index:2; }
+  .edge-shadow { position:absolute; inset:0; border-radius:3px; pointer-events:none; box-shadow: inset -14px 0 30px -18px rgba(0,0,0,.55); z-index:3; }
+  .nav-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%; border:1px solid rgba(246,244,241,.22); background:rgba(246,244,241,.07); color:var(--cream); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.25rem; transition:background .15s ease, opacity .15s ease, transform .15s ease; opacity:.85; backdrop-filter:blur(3px); }
+  .nav-btn:hover:not(:disabled) { background:rgba(246,244,241,.15); opacity:1; }
+  .nav-btn:active:not(:disabled) { transform:translateY(-50%) scale(.94); }
+  .nav-btn:disabled { opacity:.15; cursor:default; }
+  .nav-prev { left:-60px; }
+  .nav-next { right:-60px; }
+  .book-controls { max-width:440px; margin: 26px auto 0; display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .page-counter { font-size:.9rem; color:#c9d4e4; font-variant-numeric: tabular-nums; }
+  .progress-rail { width:180px; height:3px; background:rgba(246,244,241,.14); border-radius:999px; overflow:hidden; }
+  .progress-fill { height:100%; background:linear-gradient(90deg, var(--sand-d), var(--sand)); border-radius:999px; transition:width 350ms ease; }
+  .book-hint { font-size:.76rem; color:#8fa2bd; letter-spacing:.2px; }
+
+  @media (max-width:720px) {
+    .nav-prev { left:8px; } .nav-next { right:8px; }
+    .nav-btn { width:38px; height:38px; font-size:1.05rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .page { transition:none; } }
+
+  footer { background:var(--navy); color:var(--sand); padding:28px 0; font-size:.85rem; text-align:center; }
+  footer a { color:var(--sand); }
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="index.html">← М.ЧИМЭДДОРЖ.mn</a><div class="lang-switch"><a href="ardchillin-gerege.html" class="lang-active" aria-label="Монгол хэл">🇲🇳</a></div></div></header>
+
+<div class="hero"><div class="wrap">
+  <div class="kicker">Товхимол</div>
+  <h1>Ардчиллын Гэрэгэ</h1>
+  <div class="meta">Democracy Passport · Хуудсаар нь үзэх боломжтой</div>
+</div></div>
+
+<div class="book-section"><div class="wrap">
+  <div class="book-wrap" id="bookWrap">
+    <button class="nav-btn nav-prev" id="prevBtn" aria-label="Өмнөх хуудас">‹</button>
+    <div id="pages"></div>
+    <div class="edge-shadow"></div>
+    <button class="nav-btn nav-next" id="nextBtn" aria-label="Дараах хуудас">›</button>
+  </div>
+  <div class="book-controls">
+    <span class="page-counter" id="pageLabel">1 / 16</span>
+    <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="book-hint">← → товч эсвэл хуудасны ирмэг дээр дарж эргүүлнэ</div>
+  </div>
+</div></div>
+
+<footer><div class="wrap">© 2026 Мөнхжаргалын Чимэддорж · <a href="index.html">chimeddorj.mn</a></div></footer>
+
+<script>
+  const TOTAL = 16;
+  const pagesEl = document.getElementById('pages');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const pageLabel = document.getElementById('pageLabel');
+  const progressFill = document.getElementById('progressFill');
+  let current = 0;
+
+  for (let i = 1; i <= TOTAL; i++) {
+    const n = String(i).padStart(2, '0');
+    const page = document.createElement('div');
+    page.className = 'page';
+    page.style.zIndex = TOTAL - i + 2;
+    page.innerHTML = `<img src="gerege-pages/page-${n}.jpg" alt="Ардчиллын Гэрэгэ — хуудас ${i}" draggable="false" loading="${i <= 2 ? 'eager' : 'lazy'}"><div class="back"></div>`;
+    page.addEventListener('click', () => {
+      const idx = i - 1;
+      if (idx === current) flipTo(current + 1);
+      else if (idx === current - 1) flipTo(current - 1);
+    });
+    pagesEl.appendChild(page);
+  }
+  const pageEls = Array.from(pagesEl.children);
+
+  function render() {
+    pageEls.forEach((el, idx) => el.classList.toggle('flipped', idx < current));
+    pageLabel.textContent = `${Math.min(current + 1, TOTAL)} / ${TOTAL}`;
+    progressFill.style.width = (current / TOTAL * 100) + '%';
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === TOTAL;
+  }
+  function flipTo(target) { current = Math.max(0, Math.min(TOTAL, target)); render(); }
+  prevBtn.addEventListener('click', () => flipTo(current - 1));
+  nextBtn.addEventListener('click', () => flipTo(current + 1));
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') flipTo(current + 1);
+    if (e.key === 'ArrowLeft') flipTo(current - 1);
+  });
+  render();
+</script>
+</body>
+</html>

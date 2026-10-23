@@ -25,13 +25,12 @@
   .hero .meta { color:#d8d3cb; margin-top:16px; font-size:.95rem; }
 
   .book-section { background: radial-gradient(ellipse at 50% 20%, var(--navy-2) 0%, var(--navy) 45%, var(--navy-deep) 100%); padding: 56px 0 72px; }
-  .book-wrap { position:relative; width:min(62vh, 440px, 78vw); aspect-ratio: 3 / 4.24; margin:0 auto; perspective:2600px; filter:drop-shadow(0 40px 70px rgba(0,8,20,.55)); }
-  .page { position:absolute; inset:0; border-radius:3px; overflow:hidden; transform-style:preserve-3d; transform-origin:left center; transition:transform 900ms cubic-bezier(.645,.045,.355,1); box-shadow:0 0 0 1px rgba(0,0,0,.25); cursor:pointer; }
-  .page img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; backface-visibility:hidden; display:block; }
-  .page .back { position:absolute; inset:0; background:linear-gradient(135deg, var(--navy-2), var(--navy-deep)); backface-visibility:hidden; transform:rotateY(180deg); }
-  .page .back::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,.35), transparent 14%, transparent 86%, rgba(0,0,0,.35)); }
-  .page.flipped { transform:rotateY(-180deg); z-index:1; }
-  .page:not(.flipped) { z-index:2; }
+  .book-wrap { position:relative; width:min(62vh, 440px, 78vw); aspect-ratio: 3 / 4.24; margin:0 auto; filter:drop-shadow(0 40px 70px rgba(0,8,20,.55)); }
+  .page { position:absolute; inset:0; border-radius:3px; overflow:hidden; cursor:pointer; box-shadow:0 0 0 1px rgba(0,0,0,.25); opacity:0; transition:opacity 450ms ease, transform 450ms ease; }
+  .page img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .page.current { opacity:1; transform:translateX(0); z-index:2; }
+  .page.before-current { opacity:0; transform:translateX(-3%); z-index:1; }
+  .page.after-current { opacity:0; transform:translateX(3%); z-index:1; }
   .edge-shadow { position:absolute; inset:0; border-radius:3px; pointer-events:none; box-shadow: inset -14px 0 30px -18px rgba(0,0,0,.55); z-index:3; }
   .nav-btn { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%; border:1px solid rgba(246,244,241,.22); background:rgba(246,244,241,.07); color:var(--cream); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.25rem; transition:background .15s ease, opacity .15s ease, transform .15s ease; opacity:.85; backdrop-filter:blur(3px); }
   .nav-btn:hover:not(:disabled) { background:rgba(246,244,241,.15); opacity:1; }
@@ -89,29 +88,35 @@
   const progressFill = document.getElementById('progressFill');
   let current = 0;
 
+  current = 1; // 1-indexed page currently shown
+
   for (let i = 1; i <= TOTAL; i++) {
     const n = String(i).padStart(2, '0');
     const page = document.createElement('div');
     page.className = 'page';
-    page.style.zIndex = TOTAL - i + 2;
-    page.innerHTML = `<img src="gerege-pages/page-${n}.jpg" alt="Ардчиллын Гэрэгэ — хуудас ${i}" draggable="false" loading="${i <= 2 ? 'eager' : 'lazy'}"><div class="back"></div>`;
+    page.innerHTML = `<img src="gerege-pages/page-${n}.jpg" alt="Ардчиллын Гэрэгэ — хуудас ${i}" draggable="false" loading="${i <= 2 ? 'eager' : 'lazy'}">`;
     page.addEventListener('click', () => {
-      const idx = i - 1;
-      if (idx === current) flipTo(current + 1);
-      else if (idx === current - 1) flipTo(current - 1);
+      if (i === current) flipTo(current + 1);
+      else if (i === current - 1) flipTo(current - 1);
     });
     pagesEl.appendChild(page);
   }
   const pageEls = Array.from(pagesEl.children);
 
   function render() {
-    pageEls.forEach((el, idx) => el.classList.toggle('flipped', idx < current));
-    pageLabel.textContent = `${Math.min(current + 1, TOTAL)} / ${TOTAL}`;
-    progressFill.style.width = (current / TOTAL * 100) + '%';
-    prevBtn.disabled = current === 0;
+    pageEls.forEach((el, idx) => {
+      const n = idx + 1;
+      el.classList.remove('current', 'before-current', 'after-current');
+      if (n === current) el.classList.add('current');
+      else if (n < current) el.classList.add('before-current');
+      else el.classList.add('after-current');
+    });
+    pageLabel.textContent = `${current} / ${TOTAL}`;
+    progressFill.style.width = ((current - 1) / (TOTAL - 1) * 100) + '%';
+    prevBtn.disabled = current === 1;
     nextBtn.disabled = current === TOTAL;
   }
-  function flipTo(target) { current = Math.max(0, Math.min(TOTAL, target)); render(); }
+  function flipTo(target) { current = Math.max(1, Math.min(TOTAL, target)); render(); }
   prevBtn.addEventListener('click', () => flipTo(current - 1));
   nextBtn.addEventListener('click', () => flipTo(current + 1));
   window.addEventListener('keydown', (e) => {

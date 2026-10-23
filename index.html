@@ -120,6 +120,84 @@
   .brandband .frame img { display: block; width: 100%; height: auto; }
   .brandband .cap { margin-top: 14px; font-size: .85rem; color: var(--muted); }
   .brandband .cap a { color: var(--sand-d); text-decoration: none; }
+
+  /* ===== CHIMEDDORJ Great Transformation анимаци (cdx-) ===== */
+  .cdx-wrap { max-width:780px; margin:0 auto; text-align:center; }
+  .cdx-card {
+    position:relative; overflow:hidden; border-radius:16px; cursor:pointer;
+    min-height:clamp(380px, 62vw, 520px);
+    background:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px) 0 0/28px 28px,
+      radial-gradient(ellipse at 50% 0%, #34423a 0%, #1f2721 75%);
+    box-shadow:0 20px 50px rgba(20,30,25,.25), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .cdx-cv { position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; }
+  .cdx-center {
+    position:absolute; left:50%; top:47%; transform:translate(-50%,-50%);
+    display:flex; flex-direction:column; align-items:center; gap:clamp(16px,3.4vw,30px);
+  }
+  .cdx-grid {
+    --s: clamp(34px, 10.5vw, 92px);
+    position:relative; display:grid; grid-template-columns:repeat(6, var(--s)); gap:calc(var(--s) * .08);
+  }
+  .cdx-t {
+    position:relative; width:var(--s); height:var(--s); border-radius:3px; background:#fbfbfa;
+    display:flex; align-items:center; justify-content:center;
+    font-size:calc(var(--s) * .6); font-weight:300; color:#2f6fd6; line-height:1;
+    box-shadow:0 2px 0 rgba(0,0,0,.15), 0 8px 18px rgba(0,0,0,.28);
+    opacity:0; transform:translateY(-40px) scale(.6) rotate(-8deg);
+    transition:opacity .25s ease, transform .55s cubic-bezier(.2,1.5,.4,1), translate .3s ease;
+  }
+  .cdx-t.r2s { grid-column-start:2; }
+  .cdx-t.in { opacity:1; transform:none; }
+  .cdx-t.el {
+    transform:none; transition:translate .3s ease; color:#fff;
+    background:linear-gradient(155deg,#5b9bff 0%,#2563d9 55%,#1b4fb8 100%);
+    box-shadow:0 2px 0 rgba(0,0,0,.15), 0 10px 30px rgba(47,111,214,.5);
+  }
+  .cdx-t.el.in { animation:cdx-pop .45s ease-out; }
+  @keyframes cdx-pop { 0% { scale:1.12; } 100% { scale:1; } }
+  .cdx-card.done .cdx-t:hover { translate:0 -5px; }
+  .cdx-t .num, .cdx-t .mass, .cdx-t .nm { position:absolute; color:#fff; font-family:Georgia,"Times New Roman",serif; transition:opacity .3s; }
+  .cdx-t .num  { top:6%; left:7%; font-size:calc(var(--s) * .15); }
+  .cdx-t .mass { bottom:6%; right:7%; font-size:calc(var(--s) * .1); }
+  .cdx-t .nm   { bottom:6%; left:7%; font-size:calc(var(--s) * .09); font-family:inherit; opacity:0; }
+  .cdx-t.el:hover .mass { opacity:0; }
+  .cdx-t.el:hover .nm { opacity:1; }
+
+  .cdx-mwrap { display:flex; align-items:center; gap:12px; opacity:0; transition:opacity .5s ease; }
+  .cdx-mwrap.show { opacity:1; }
+  .cdx-mwrap i { display:block; height:1px; width:0; transition:width .9s ease; background:linear-gradient(90deg,transparent,#8db8ff); }
+  .cdx-mwrap i:last-child { background:linear-gradient(90deg,#8db8ff,transparent); }
+  .cdx-card.done .cdx-mwrap i { width:clamp(20px,7vw,70px); }
+  .cdx-motto {
+    font-family:Georgia,"Times New Roman",serif; font-style:italic; white-space:pre;
+    font-size:clamp(16px,3.2vw,28px); color:#e8eef7; letter-spacing:.04em; line-height:1.3;
+  }
+  .cdx-motto b { font-weight:400; color:#8db8ff; }
+
+  .cdx-cap {
+    position:absolute; left:12px; right:12px; bottom:clamp(14px,3.5vw,28px); text-align:center;
+    color:rgba(255,255,255,.6); font-size:clamp(10px,1.5vw,13px); letter-spacing:.16em; text-transform:uppercase;
+    transition:opacity .35s ease; pointer-events:none;
+  }
+  .cdx-cap.fade { opacity:0; }
+  .cdx-cap b { color:#8db8ff; font-weight:500; }
+  .cdx-replay { position:absolute; top:12px; right:14px; color:rgba(255,255,255,.4); font-size:12px; opacity:0; transition:opacity .6s; pointer-events:none; }
+  .cdx-card.done .cdx-replay { opacity:1; }
+  .cdx-snd {
+    position:absolute; top:10px; left:12px; z-index:3; cursor:pointer;
+    font:12px/1 Calibri,"Segoe UI",Arial,sans-serif; color:rgba(255,255,255,.75);
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:6px 11px;
+    transition:background .2s, color .2s;
+  }
+  .cdx-snd:hover { background:rgba(255,255,255,.16); color:#fff; }
+  .cdx-snd[aria-pressed="true"] { color:#8db8ff; border-color:rgba(141,184,255,.5); }
+  .cdx-follow { margin-top:16px; color:var(--muted); font-size:.95rem; }
+  .cdx-follow a { color:var(--sand-d); text-decoration:none; }
+  /* ===== cdx анимаци дуусав ===== */
+
   footer { background: var(--navy); color: var(--sand); padding: 40px 0; font-size: .88rem; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer a { color: var(--sand); text-decoration: none; }
@@ -484,10 +562,37 @@
 
 <div class="brandband">
   <div class="wrap">
-    <div class="frame">
-      <img src="x-cover-chimeddorj.jpg" alt="Мөнхжаргалын Чимэддорж — X (Twitter)" loading="lazy">
+    <div class="cdx-wrap">
+      <div class="cdx-card" id="cdx" role="img" aria-label="CHIMEDDORJ — Great Transformation">
+        <canvas class="cdx-cv"></canvas>
+        <div class="cdx-center">
+          <div class="cdx-grid">
+            <div class="cdx-t el" data-l="C"><span class="num">6</span>C<span class="mass">12.011</span><span class="nm">Нүүрстөрөгч</span></div>
+            <div class="cdx-t el" data-l="H"><span class="num">1</span>H<span class="mass">1.008</span><span class="nm">Устөрөгч</span></div>
+            <div class="cdx-t">I</div>
+            <div class="cdx-t">M</div>
+            <div class="cdx-t">E</div>
+            <div class="cdx-t">D</div>
+            <div class="cdx-t r2s">D</div>
+            <div class="cdx-t el" data-l="O"><span class="num">8</span>O<span class="mass">15.9994</span><span class="nm">Хүчилтөрөгч</span></div>
+            <div class="cdx-t">R</div>
+            <div class="cdx-t">J</div>
+          </div>
+          <div class="cdx-mwrap"><i></i><span class="cdx-motto" id="cdxMotto"></span><i></i></div>
+        </div>
+        <canvas class="cdx-cv cdx-fx"></canvas>
+        <div class="cdx-cap"><span id="cdxCap"></span></div>
+        <div class="cdx-replay">↻ дахин үзэх</div>
+        <button type="button" class="cdx-snd" id="cdxSnd" aria-pressed="false">🔊 Дуутай үзэх</button>
+      </div>
+      <p class="cdx-follow">Дагаарай: <a href="https://x.com/chimeddorjm">x.com/chimeddorjm</a></p>
     </div>
-    <div class="cap">Дагаарай: <a href="https://x.com/chimeddorjm">x.com/chimeddorjm</a></div>
+    <noscript>
+      <div class="frame">
+        <img src="x-cover-chimeddorj.jpg" alt="Мөнхжаргалын Чимэддорж — X (Twitter)" loading="lazy">
+      </div>
+      <div class="cap">Дагаарай: <a href="https://x.com/chimeddorjm">x.com/chimeddorjm</a></div>
+    </noscript>
   </div>
 </div>
 
@@ -503,5 +608,6 @@
   </div>
 </footer>
 
+<script src="chimeddorj-anim.js" defer></script>
 </body>
 </html>
